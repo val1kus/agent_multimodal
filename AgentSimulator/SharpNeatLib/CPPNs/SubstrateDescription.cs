@@ -5,6 +5,7 @@ using SharpNeatLib.NeuralNetwork;
 using SharpNeatLib.Xml;
 using System.Xml;
 using System.Drawing;
+using System.Globalization;
 using SharpNeatLib.Experiments;
 using SharpNeatLib.NeatGenome;
 using System.Runtime.CompilerServices;
@@ -56,12 +57,12 @@ namespace SharpNeatLib.CPPNs
 
                 int neuronGroupType = -1;
 
-                float startX = float.Parse(XmlUtilities.GetAttribute(xmlNeuronGroup, "startx").Value);
-                float startY = float.Parse(XmlUtilities.GetAttribute(xmlNeuronGroup, "starty").Value);
-                float endX = float.Parse(XmlUtilities.GetAttribute(xmlNeuronGroup, "endx").Value);
-                float endY = float.Parse(XmlUtilities.GetAttribute(xmlNeuronGroup, "endy").Value);
-                uint dx = uint.Parse(XmlUtilities.GetAttribute(xmlNeuronGroup, "dx").Value);
-                uint dy = uint.Parse(XmlUtilities.GetAttribute(xmlNeuronGroup, "dy").Value);
+                float startX = float.Parse(XmlUtilities.GetAttribute(xmlNeuronGroup, "startx").Value, CultureInfo.InvariantCulture);
+                float startY = float.Parse(XmlUtilities.GetAttribute(xmlNeuronGroup, "starty").Value, CultureInfo.InvariantCulture);
+                float endX = float.Parse(XmlUtilities.GetAttribute(xmlNeuronGroup, "endx").Value, CultureInfo.InvariantCulture);
+                float endY = float.Parse(XmlUtilities.GetAttribute(xmlNeuronGroup, "endy").Value, CultureInfo.InvariantCulture);
+                uint dx = uint.Parse(XmlUtilities.GetAttribute(xmlNeuronGroup, "dx").Value, CultureInfo.InvariantCulture);
+                uint dy = uint.Parse(XmlUtilities.GetAttribute(xmlNeuronGroup, "dy").Value, CultureInfo.InvariantCulture);
                 NeuronGroup ng = null;
 
                 if (tmp.Equals("Hidden"))
